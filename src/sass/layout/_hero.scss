@@ -1,0 +1,130 @@
+.hero {
+  flex: 1 0 auto;
+  padding-top: 20px;
+  padding-bottom: 40px;
+
+  // min-height: calc(100vh - 80px);
+  @include tablet {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+}
+
+.cards {
+  @include tablet {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+// .cards__wrap {
+// }
+
+.cards__list {
+  background-color: var(--header-text-color);
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+
+  @include desktop {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 32px;
+    column-gap: 16px;
+  }
+}
+
+.cards__item {
+  position: relative;
+  transition-property: transform;
+  transition-duration: 250ms;
+  @media screen and (max-width: 767px) {
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &:hover {
+    transform: scale(1.03);
+  }
+}
+
+.cards__photo {
+  border-radius: 5px;
+  margin: 0;
+  width: 100%;
+  height: auto;
+  // @include tablet {
+  //   width: 336px;
+  //   height: 455px;
+  // }
+  // @include desktop {
+  //   width: 395px;
+  //   height: 574px;
+  // }
+}
+
+.cards__title {
+  text-transform: uppercase;
+  color: var(--primary-text-color);
+  line-height: 1.16;
+  font-weight: 500;
+  margin-top: 10px;
+  @include tablet {
+    line-height: 1.13;
+  }
+  @include desktop {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+.cards__info {
+  line-height: 1.13;
+  color: var(--color-text-accent);
+  font-weight: 500;
+  @include tablet {
+    line-height: 1.13;
+  }
+  @include desktop {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+}
+
+.no-movies {
+  text-align: center;
+  font-size: 20px;
+}
+
+.cards__vote {
+  padding: 1px 9px;
+  background-color: var(--color-accent);
+  border-radius: 5px;
+  color: var(--header-text-color);
+}
+
+.cards__remove-item {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: var(--color-text-accent);
+  border-radius: 50%;
+  border: none;
+  color: var(--header-text-color);
+  top: 15px;
+  right: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  transition-property: transform, background-color;
+  transition-duration: 250ms;
+
+  &:hover,
+  &:focus {
+    background-color: var(--footer-text-color);
+    transform: scale(1.08);
+  }
+}
